@@ -231,7 +231,7 @@ The goal: Make legacy modernization more effective, sustainable, and knowledge-p
 
 ## License
 
-[License TBD - recommend public domain or permissive open source]
+SpecOps is released under the [MIT License](LICENSE). This permissive open source license allows you to freely use, modify, and share this methodology and documentation across government agencies and organizations.
 
 ---
 
