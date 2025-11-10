@@ -6,9 +6,9 @@
 
 ## What is SpecOps?
 
-**SpecOps is a methodology for using AI to modernize legacy government systems by focusing on knowledge preservation and verified specifications rather than direct code translation.**
+SpecOps is a methodology for using AI to modernize legacy government systems by focusing on knowledge preservation and verified specifications rather than direct code translation.
 
-Traditional AI-assisted modernization tries to **transpile** legacy code directly into modern languages. SpecOps uses AI to **compile** institutional knowledge into comprehensive, human-verified specifications that become the authoritative source of truth for system behavior.
+Traditional AI-assisted modernization tries to transpile legacy code directly into modern languages. SpecOps uses AI to compile institutional knowledge into comprehensive, human-verified specifications that become the authoritative source of truth for system behavior.
 
 **Bottom line**: The specification is more valuable than the code. It captures institutional knowledge, enables domain expert verification, and outlasts any particular technical implementation.
 
@@ -27,11 +27,11 @@ When AI translates legacy software to modern software stacks automatically:
 ### The SpecOps Approach
 
 When AI generates specifications first, then modern code:
-- ✅ **Domain experts verify specifications** before any code is written
-- ✅ **Institutional knowledge is preserved** in readable form
-- ✅ **Specifications outlast implementations** and guide future changes
-- ✅ **Multiple stakeholders can review** using natural language
-- ✅ **Changes flow through specifications** with proper oversight
+- ✅ Domain experts verify specifications before any code is written
+- ✅ Institutional knowledge is preserved in readable form
+- ✅ Specifications outlast implementations and guide future changes
+- ✅ Multiple stakeholders can review using natural language
+- ✅ Changes flow through specifications with proper oversight
 
 ---
 
@@ -53,46 +53,50 @@ When AI generates specifications first, then modern code:
 
 ## How It Works
 
-```
-Legacy Code → AI Analysis → Draft Specification
-                                    ↓
-                          Domain Expert Verification
-                                    ↓
-                          Verified Specification ← Source of Truth
-                                    ↓
-                          AI Code Generation → Modern Implementation
-                                    ↓
-                          Testing Against Specification
-                                    ↓
-                          Production Deployment
+```mermaid
+graph TB
+    A[📜 Legacy Code] --> B[🤖 AI Analysis]
+    B --> C[📋 Draft Specification]
+    C --> D{👥 Domain Expert<br/>Verification}
+    D -->|Revisions Needed| C
+    D -->|Approved| E[✅ Verified Specification<br/>⭐ Source of Truth ⭐]
+    E --> F[🤖 AI Code Generation]
+    F --> G[💻 Modern Implementation]
+    G --> H[🧪 Testing Against<br/>Specification]
+    H -->|Tests Pass| I[🚀 Production Deployment]
+    H -->|Tests Fail| F
+    
+    style E fill:#90EE90,stroke:#2E8B57,stroke-width:3px
+    style D fill:#FFE4B5,stroke:#FF8C00,stroke-width:2px
+    style I fill:#87CEEB,stroke:#4682B4,stroke-width:2px
 ```
 
-The specification remains valuable forever. Updated code is just the current implementation.
+**Key Insight**: The specification remains valuable forever. Updated code is just the current implementation.
 
 ---
 
 ## Documentation
 
 ### 📋 [Manifesto](MANIFESTO.md)
-The foundational principles and philosophy of SpecOps. Why specifications are the valuable artifact, and how this approach differs from traditional modernization. **Start here to understand the core ideas.**
+The foundational principles and philosophy of SpecOps. Why specifications are the valuable artifact, and how this approach differs from traditional modernization. Start here to understand the core ideas.
 
 ### 🔄 [Comparison Framework](COMPARISON.md)
-Detailed comparison of SpecOps vs. direct translation and traditional modernization across 11 dimensions. Shows when each approach is appropriate and why SpecOps excels for government systems. **Read this to understand the trade-offs.**
+Detailed comparison of SpecOps vs. direct translation and traditional modernization across 11 dimensions. Shows when each approach is appropriate and why SpecOps excels for government systems. Read this to understand the trade-offs.
 
 ### 🛠️ [Core Tools](CORE-TOOLS.md)
-The technical infrastructure needed for SpecOps: specification repositories, AI agent instruction sets, verification tools, and change management systems. **Use this to set up your toolchain.**
+The technical infrastructure needed for SpecOps: specification repositories, AI agent instruction sets, verification tools, and change management systems. Use this to set up your toolchain.
 
 ### 📖 [Methodology](METHODOLOGY.md)
-Step-by-step guide through all six phases of SpecOps: Discovery, Specification Generation, Verification, Implementation, Testing, and Deployment. Includes integration with the Strangler Fig pattern for incremental modernization. **Follow this to execute SpecOps.**
+Step-by-step guide through all six phases of SpecOps: Discovery, Specification Generation, Verification, Implementation, Testing, and Deployment. Includes integration with the Strangler Fig pattern for incremental modernization. Follow this to execute SpecOps.
 
 ### 👥 [Team Structure](TEAM.md)
-Roles, responsibilities, and staffing guidance for a SpecOps modernization project. Covers team sizes from minimum viable (8-10 people) to full-scale (12-18 people), with specific job descriptions and success metrics. **Use this to build your team.**
+Roles, responsibilities, and staffing guidance for a SpecOps modernization project. Covers team sizes from minimum viable (8-10 people) to full-scale (12-18 people), with specific job descriptions and success metrics. Use this to build your team.
 
 ### 💡 [Instruction Set Examples](INSTRUCTION-SETS.md)
-Guide to creating and sharing AI agent instruction sets (skills) that enable SpecOps. Includes examples for COBOL comprehension, specification generation, and domain-specific knowledge. Emphasizes collaboration and cross-government sharing. **Read this to build your instruction library.**
+Guide to creating and sharing AI agent instruction sets (skills) that enable SpecOps. Includes examples for COBOL comprehension, specification generation, and domain-specific knowledge. Emphasizes collaboration and cross-government sharing. Read this to build your instruction library.
 
 ### 🚧 [Reference Implementation](REFERENCE-IMPLEMENTATION.md)
-_(In Development)_ A complete, working example of SpecOps applied to a real legacy system. Will provide reusable artifacts, templates, and lessons learned. **Check back for practical examples.**
+_(In Development)_ A complete, working example of SpecOps applied to a real legacy system. Will provide reusable artifacts, templates, and lessons learned. Check back for practical examples.
 
 ---
 
@@ -192,11 +196,11 @@ SpecOps may not be necessary when:
 
 SpecOps is a community-driven approach. We welcome contributions of:
 
-- **Instruction Sets**: AI agent skills for legacy platforms, languages, or domains
-- **Experience Reports**: Lessons learned from applying SpecOps
-- **Tool Integrations**: How to use SpecOps with different AI coding tools
-- **Templates and Examples**: Reusable artifacts for specifications and processes
-- **Documentation Improvements**: Clarifications, corrections, and enhancements
+- Instruction Sets: AI agent skills for legacy platforms, languages, or domains
+- Experience Reports: Lessons learned from applying SpecOps
+- Tool Integrations: How to use SpecOps with different AI coding tools
+- Templates and Examples: Reusable artifacts for specifications and processes
+- Documentation Improvements: Clarifications, corrections, and enhancements
 
 See [INSTRUCTION-SETS.md](INSTRUCTION-SETS.md) for detailed contribution guidelines.
 
@@ -222,7 +226,7 @@ SpecOps was developed to address the unique challenges of government legacy syst
 
 The methodology combines proven practices from incremental modernization (Strangler Fig pattern), infrastructure as code (GitOps), and specification-driven development, adapted for the era of AI-assisted software development.
 
-**The goal**: Make legacy modernization more effective, sustainable, and knowledge-preserving for everyone.
+The goal: Make legacy modernization more effective, sustainable, and knowledge-preserving for everyone.
 
 ---
 
