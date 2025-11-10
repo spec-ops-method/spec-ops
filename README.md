@@ -201,7 +201,9 @@ SpecOps is a community-driven approach. We welcome contributions of:
 - Templates and Examples: Reusable artifacts for specifications and processes
 - Documentation Improvements: Clarifications, corrections, and enhancements
 
-See [INSTRUCTION-SETS.md](INSTRUCTION-SETS.md) for detailed contribution guidelines.
+**See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines on how to contribute.**
+
+For instruction set contributions specifically, see [INSTRUCTION-SETS.md](docs/INSTRUCTION-SETS.md) for examples and guidance.
 
 ---
 
