@@ -57,7 +57,7 @@ When the specification is the authoritative source of truth, there's a clear art
 
 **1. The Specification is the Source of Truth**
 
-Like GitOps treats the Git repository as the single source of truth for infrastructure, SpecOps treats the specification as the authoritative description of system behavior. The legacy code is data to be analyzed; the modern code is an implementation artifact; but the specification is the enduring record of what the system does.
+Like [GitOps](https://github.com/topics/gitops) treats a Git repository as the single source of truth for cloud infrastructure, SpecOps treats the software specification as the authoritative description of system behavior. The legacy code is data to be analyzed; the modern code is an implementation artifact; but the specification is the enduring record of what the system does.
 
 **2. Knowledge Preservation Precedes Code Translation**
 
