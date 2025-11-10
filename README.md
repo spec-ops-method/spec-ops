@@ -1,110 +1,246 @@
-# SpecOps Manifesto
-## A Specification-Driven Approach to Legacy System Modernization
+# SpecOps: Specification-Driven Legacy System Modernization
 
-### The Problem
+> AI is going to change the game on legacy system modernization, but maybe not in the way you think.
 
-Government agencies face a mounting crisis: critical systems built decades ago in languages like COBOL, with retiring developers, sparse documentation, and institutional knowledge evaporating. The promise of AI-assisted modernization has generated enormous interest, with many approaches focused on direct code translation—converting COBOL to Java, mainframe logic to cloud-native applications, legacy systems to modern stacks.
+---
 
-But this approach misses something fundamental: **the most valuable thing isn't the code, it's the knowledge of what the legacy system does and why.**
+## What is SpecOps?
 
-### What is Specification-Driven Development?
+**SpecOps is a methodology for using AI to modernize legacy government systems by focusing on knowledge preservation and verified specifications rather than direct code translation.**
 
-Specification-driven development places a comprehensive, human-readable software specification at the center of the modernization process. Rather than treating the spec as documentation that follows implementation, it becomes the authoritative source of truth that precedes and governs implementation.
+Traditional AI-assisted modernization tries to **transpile** legacy code directly into modern languages. SpecOps uses AI to **compile** institutional knowledge into comprehensive, human-verified specifications that become the authoritative source of truth for system behavior.
 
-In the context of AI-assisted development, this means:
+**Bottom line**: The specification is more valuable than the code. It captures institutional knowledge, enables domain expert verification, and outlasts any particular technical implementation.
 
-1. **AI agents help generate specifications from legacy code** - Using specialized instructions and skills, AI tools analyze legacy systems and produce detailed specifications explaining what the system does in clear, domain-appropriate language.
+---
 
-2. **Human experts verify and refine the specification** - Subject matter experts who understand business rules and policy intent review the specification for accuracy, without needing to understand COBOL syntax or legacy technical implementation.
+## Why SpecOps?
 
-3. **The verified specification becomes the source of truth** - Once validated, the specification serves as the authoritative description of system behavior, replacing tribal knowledge and undocumented code as the primary reference.
+### The Problem with Direct Translation
 
-4. **Modern code is generated from the verified specification** - AI agents use the specification, along with modern development instructions, to generate new implementations using contemporary technology stacks.
+When AI translates legacy software to modern software stacks automatically:
+- ❌ Errors in understanding get embedded in new code
+- ❌ Domain experts can't verify technical implementations
+- ❌ Institutional knowledge remains locked in code
+- ❌ No artifact exists if experts become available later
 
-5. **Changes flow through the specification** - All modifications start with updates to the specification, which are reviewed and approved before AI agents propagate those changes to code.
+### The SpecOps Approach
 
-### Why Specifications Are the Valuable Artifact
+When AI generates specifications first, then modern code:
+- ✅ **Domain experts verify specifications** before any code is written
+- ✅ **Institutional knowledge is preserved** in readable form
+- ✅ **Specifications outlast implementations** and guide future changes
+- ✅ **Multiple stakeholders can review** using natural language
+- ✅ **Changes flow through specifications** with proper oversight
 
-Traditional approaches to AI-assisted modernization treat the generated modern code as the primary output of value. SpecOps takes a fundamentally different view: **the specification is what matters most.**
+---
 
-Here's why:
+## Core Principles
 
-**Specifications Capture Institutional Knowledge**
+1. **The Specification is the Source of Truth** - Like GitOps treats Git as authoritative for infrastructure, SpecOps treats specifications as authoritative for system behavior
 
-Legacy systems contain decades of accumulated business logic, policy interpretations, and edge case handling. This knowledge is often embedded in code written by people who have long since retired, in languages few understand. When we generate a specification, we're not just documenting syntax—we're recovering and preserving institutional knowledge before it's lost forever.
+2. **Knowledge Preservation Precedes Translation** - Capture and verify what the system does before building replacements
 
-**Specifications Enable Human Verification**
+3. **Domain Experts Are the Arbiters** - Policy and business stakeholders verify specifications, not code
 
-Policy experts, program administrators, and business stakeholders cannot easily verify that a Java translation of COBOL code is correct. But they can verify whether a specification accurately describes eligibility rules, benefit calculations, or tax logic. The specification creates a verification checkpoint where the people who actually understand what the system should do can confirm it's right.
+4. **AI Assists, Humans Verify** - AI excels at analysis and generation; humans excel at judgment and verification
 
-**Specifications Provide Direction to AI Agents**
+5. **Changes Flow Through Specifications** - All modifications start with specification updates, reviewed and approved before implementation
 
-A comprehensive specification serves as high-quality input for AI code generation. Rather than asking an AI agent to translate legacy code it may misunderstand, we're asking it to implement clearly articulated requirements. This is a task AI agents are demonstrably better at, and one where errors are easier to catch through testing against specified behavior.
+6. **Specifications Should Be Accessible** - Readable by domain experts while detailed enough to guide implementation
 
-**Specifications Are Technology-Agnostic**
+---
 
-A well-written specification describes what a system does without being tied to how it's implemented. This means the same specification can guide multiple implementations—different technology stacks, different deployment models, even different functional decompositions. The specification becomes a stable foundation that outlasts any particular technical implementation.
+## How It Works
 
-**Specifications Support Incremental Modernization**
+```
+Legacy Code → AI Analysis → Draft Specification
+                                    ↓
+                          Domain Expert Verification
+                                    ↓
+                          Verified Specification ← Source of Truth
+                                    ↓
+                          AI Code Generation → Modern Implementation
+                                    ↓
+                          Testing Against Specification
+                                    ↓
+                          Production Deployment
+```
 
-Large-scale modernization efforts typically span years. A specification allows teams to modernize components incrementally while maintaining a single source of truth about system behavior. As new implementations replace legacy code, the specification ensures consistency and provides a reference for integration testing.
+The specification remains valuable forever. Updated code is just the current implementation.
 
-**Specifications Create Accountability**
+---
 
-When the specification is the authoritative source of truth, there's a clear artifact to review, approve, and maintain. Changes require updating the specification first, creating a review process that involves the right stakeholders. This is much harder to achieve when the "truth" is scattered across legacy code and tribal knowledge.
+## Documentation
 
-### Core Principles of SpecOps
+### 📋 [Manifesto](MANIFESTO.md)
+The foundational principles and philosophy of SpecOps. Why specifications are the valuable artifact, and how this approach differs from traditional modernization. **Start here to understand the core ideas.**
 
-**1. The Specification is the Source of Truth**
+### 🔄 [Comparison Framework](COMPARISON.md)
+Detailed comparison of SpecOps vs. direct translation and traditional modernization across 11 dimensions. Shows when each approach is appropriate and why SpecOps excels for government systems. **Read this to understand the trade-offs.**
 
-Like [GitOps](https://github.com/topics/gitops) treats a Git repository as the single source of truth for cloud infrastructure, SpecOps treats the software specification as the authoritative description of system behavior. The legacy code is data to be analyzed; the modern code is an implementation artifact; but the specification is the enduring record of what the system does.
+### 🛠️ [Core Tools](CORE-TOOLS.md)
+The technical infrastructure needed for SpecOps: specification repositories, AI agent instruction sets, verification tools, and change management systems. **Use this to set up your toolchain.**
 
-**2. Knowledge Preservation Precedes Code Translation**
+### 📖 [Methodology](METHODOLOGY.md)
+Step-by-step guide through all six phases of SpecOps: Discovery, Specification Generation, Verification, Implementation, Testing, and Deployment. Includes integration with the Strangler Fig pattern for incremental modernization. **Follow this to execute SpecOps.**
 
-Before generating a single line of modern code, invest in creating and verifying a comprehensive specification. The specification is not a means to an end—it's a valuable deliverable in its own right, regardless of whether modernization proceeds.
+### 👥 [Team Structure](TEAM.md)
+Roles, responsibilities, and staffing guidance for a SpecOps modernization project. Covers team sizes from minimum viable (8-10 people) to full-scale (12-18 people), with specific job descriptions and success metrics. **Use this to build your team.**
 
-**3. Domain Experts Are the Arbiters of Correctness**
+### 💡 [Instruction Set Examples](INSTRUCTION-SETS.md)
+Guide to creating and sharing AI agent instruction sets (skills) that enable SpecOps. Includes examples for COBOL comprehension, specification generation, and domain-specific knowledge. Emphasizes collaboration and cross-government sharing. **Read this to build your instruction library.**
 
-The people who understand policy, business rules, and program intent are best positioned to verify system behavior. SpecOps creates artifacts and processes that enable their meaningful participation in modernization, rather than requiring them to review technical implementation details.
+### 🚧 [Reference Implementation](REFERENCE-IMPLEMENTATION.md)
+_(In Development)_ A complete, working example of SpecOps applied to a real legacy system. Will provide reusable artifacts, templates, and lessons learned. **Check back for practical examples.**
 
-**4. AI Agents Are Tools for Both Understanding and Implementation**
+---
 
-AI excels at two distinct tasks in modernization: analyzing legacy code to extract behavior patterns, and generating new code from clear specifications. SpecOps uses AI for both, with human verification as the crucial bridge between them.
+## Key Benefits
 
-**5. Changes Flow Through the Specification**
+### For Government Agencies
 
-All system modifications begin with specification updates. This ensures changes are reviewed by appropriate stakeholders, validated against policy intent, and documented before implementation. The specification becomes a change management tool, not just documentation.
+**Knowledge Preservation**
+- Capture institutional knowledge before experts retire
+- Create lasting documentation that outlives any implementation
+- Preserve understanding of policy decisions and edge cases
 
-**6. Specifications Should Be Accessible**
+**Risk Reduction**
+- Domain experts verify behavior before code is written
+- Errors caught early, when they're cheapest to fix
+- Clear audit trail of what changed and why
 
-A specification should be readable by non-technical stakeholders while remaining detailed enough to guide implementation. This may require different views or formats for different audiences, but the core content should be understandable to people who know the domain, not just those who know the code.
+**Better Outcomes**
+- Specifications ensure modern systems implement policy correctly
+- Stakeholders can meaningfully participate in verification
+- Changes managed with proper oversight
 
-### What SpecOps Is Not
+**Sustainable Modernization**
+- Incremental approach via Strangler Fig pattern
+- Value delivered continuously, not just at project end
+- Foundation for future modernization efforts
 
-**SpecOps is not about avoiding AI** - It fully embraces AI as a powerful tool for both understanding legacy systems and building new ones. The methodology is only practical because of recent advances in AI capabilities.
+### For Technology Teams
 
-**SpecOps is not slower than direct translation** - While it appears to add a step, the specification verification checkpoint catches errors before they're embedded in new implementations. Fixing misunderstood business logic after it's been coded, tested, and deployed is far more expensive than catching it during spec review.
+**AI as Force Multiplier**
+- AI handles tedious legacy code analysis
+- AI generates code from clear specifications
+- AI reduces manual effort while improving quality
 
-**SpecOps is not just documentation** - The specification isn't supplementary documentation that describes the system. It's the authoritative source that defines the system, with code as the implementation of that definition.
+**Clear Success Criteria**
+- Specifications define when implementations are "correct"
+- Testing against specifications is straightforward
+- Less ambiguity about requirements
 
-**SpecOps is not limited to legacy modernization** - While the approach emerged from the legacy modernization challenge, specification-driven development with AI assistance is valuable for any complex system where bridging domain expertise and technical implementation is difficult.
+**Reusable Knowledge**
+- Instruction sets can be shared across projects
+- Specification patterns apply to multiple systems
+- Community collaboration reduces duplication
 
-### How SpecOps is defferent
+---
 
-Traditional approaches ask: "How can we use AI to convert this COBOL to Java?"
+## When to Use SpecOps
 
-SpecOps asks: "How can we use AI to help us understand and preserve what this system does, verify that understanding with people who know, and then build new implementations from that verified knowledge?"
+SpecOps is particularly effective when:
 
-The difference is important. One approach treats modernization as a translation problem. The other treats it as a knowledge recovery and preservation challenge, where the specification becomes the most valuable artifact—more valuable than either the legacy code or the modern code that replaces it.
+- ✅ Legacy system is poorly documented
+- ✅ Institutional knowledge is at risk of being lost
+- ✅ Business logic is complex and critical to get right
+- ✅ Domain experts are available but can't verify code
+- ✅ Long-term knowledge preservation is valuable
+- ✅ Incremental modernization over years is expected
+- ✅ System behavior must be auditable and explainable
 
-Traditional thinking about using AI to modernize legacy systems focuses on **transpilation** - process of converting source code written in one programming language into equivalent source code in another programming language. SpecOps is about **compilation** - A methodology and a set of tools that use AI to bring together authoritative information on how a legacy system works.
+SpecOps may not be necessary when:
 
-### The Road Ahead
+- ⚠️ Legacy system is well-understood and well-documented
+- ⚠️ Business logic is simple and stable
+- ⚠️ Speed is prioritized over accuracy
+- ⚠️ Comprehensive test coverage already exists
 
-SpecOps is not just a methodology—it's a mindset shift about what matters in legacy system modernization. It prioritizes understanding over translation, verification over speed, and knowledge preservation over code conversion.
+---
 
-As government agencies face the urgent need to modernize aging systems while institutional knowledge continues to walk out the door at retirement, SpecOps offers a path forward that treats AI as a tool for amplifying human expertise, not replacing it.
+## Getting Started
 
-The specification is what endures. The specification is what we can verify. The specification is what has value.
+### 1. Read the Core Documents
+- Start with the [Manifesto](MANIFESTO.md) to understand the philosophy
+- Review the [Comparison Framework](COMPARISON.md) to see if SpecOps fits your context
+- Study the [Methodology](METHODOLOGY.md) to understand the process
 
-Everything else is implementation details.
+### 2. Assess Your Situation
+- Do you have domain experts available for verification?
+- Is institutional knowledge at risk?
+- Can you commit to incremental modernization?
+- Do you have or can you acquire the necessary tools?
+
+### 3. Start Small
+- Select a pilot component (moderate complexity, known behavior)
+- Prove the approach in your environment
+- Refine tools and workflows
+- Build team capability
+- Demonstrate value to stakeholders
+
+### 4. Scale Up
+- Work through prioritized components incrementally
+- Build library of specifications and instruction sets
+- Share knowledge across your organization
+- Contribute to the broader community
+
+---
+
+## Contributing
+
+SpecOps is a community-driven approach. We welcome contributions of:
+
+- **Instruction Sets**: AI agent skills for legacy platforms, languages, or domains
+- **Experience Reports**: Lessons learned from applying SpecOps
+- **Tool Integrations**: How to use SpecOps with different AI coding tools
+- **Templates and Examples**: Reusable artifacts for specifications and processes
+- **Documentation Improvements**: Clarifications, corrections, and enhancements
+
+See [INSTRUCTION-SETS.md](INSTRUCTION-SETS.md) for detailed contribution guidelines.
+
+---
+
+## Community
+
+SpecOps is designed to enable collaboration across government agencies and the civic tech community.
+
+**Sharing Instruction Sets**: Technical patterns and AI instructions are highly portable across organizations. A COBOL comprehension skill works whether you're modernizing benefits in California or taxes in New York.
+
+**Cross-Government Collaboration**: Many governments face identical legacy modernization challenges. Pooling resources and sharing instruction sets reduces duplicated effort.
+
+**Open Source by Design**: All SpecOps documentation and instruction sets should be freely shareable to maximize reuse and adaptation.
+
+[Community resources and contact information TBD]
+
+---
+
+## About
+
+SpecOps was developed to address the unique challenges of government legacy system modernization: aging systems, retiring workforce, complex business rules, and the need to preserve institutional knowledge while embracing modern technology.
+
+The methodology combines proven practices from incremental modernization (Strangler Fig pattern), infrastructure as code (GitOps), and specification-driven development, adapted for the era of AI-assisted software development.
+
+**The goal**: Make legacy modernization more effective, sustainable, and knowledge-preserving for everyone.
+
+---
+
+## License
+
+[License TBD - recommend public domain or permissive open source]
+
+---
+
+## Citation
+
+If you use SpecOps in your work or research, please cite:
+
+```
+SpecOps: Specification-Driven Legacy System Modernization
+https://github.com/[your-org]/specops
+```
+
+---
+
+**SpecOps: Because the knowledge is what matters. Everything else is implementation details.**
