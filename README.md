@@ -76,25 +76,25 @@ graph TB
 
 ## Documentation
 
-### 📋 [Manifesto](MANIFESTO.md)
+### 📋 [Manifesto](docs/MANIFESTO.md)
 The foundational principles and philosophy of SpecOps. Why specifications are the valuable artifact, and how this approach differs from traditional modernization. Start here to understand the core ideas.
 
-### 🔄 [Comparison Framework](COMPARISON.md)
+### 🔄 [Comparison Framework](docs/COMPARISON.md)
 Detailed comparison of SpecOps vs. direct translation and traditional modernization across 11 dimensions. Shows when each approach is appropriate and why SpecOps excels for government systems. Read this to understand the trade-offs.
 
-### 🛠️ [Core Tools](CORE-TOOLS.md)
+### 🛠️ [Core Tools](docs/CORE-TOOLS.md)
 The technical infrastructure needed for SpecOps: specification repositories, AI agent instruction sets, verification tools, and change management systems. Use this to set up your toolchain.
 
-### 📖 [Methodology](METHODOLOGY.md)
+### 📖 [Methodology](docs/METHODOLOGY.md)
 Step-by-step guide through all six phases of SpecOps: Discovery, Specification Generation, Verification, Implementation, Testing, and Deployment. Includes integration with the Strangler Fig pattern for incremental modernization. Follow this to execute SpecOps.
 
-### 👥 [Team Structure](TEAM.md)
+### 👥 [Team Structure](docs/TEAM.md)
 Roles, responsibilities, and staffing guidance for a SpecOps modernization project. Covers team sizes from minimum viable (8-10 people) to full-scale (12-18 people), with specific job descriptions and success metrics. Use this to build your team.
 
-### 💡 [Instruction Set Examples](INSTRUCTION-SETS.md)
+### 💡 [Instruction Set Examples](docs/INSTRUCTION-SETS.md)
 Guide to creating and sharing AI agent instruction sets (skills) that enable SpecOps. Includes examples for COBOL comprehension, specification generation, and domain-specific knowledge. Emphasizes collaboration and cross-government sharing. Read this to build your instruction library.
 
-### 🚧 [Reference Implementation](REFERENCE-IMPLEMENTATION.md)
+### 🚧 [Reference Implementation](docs/REFERENCE-IMPLEMENTATION.md)
 _(In Development)_ A complete, working example of SpecOps applied to a real legacy system. Will provide reusable artifacts, templates, and lessons learned. Check back for practical examples.
 
 ---
