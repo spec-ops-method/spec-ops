@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SpecOps: Specification-Driven Legacy System Modernization - Using AI to preserve institutional knowledge while modernizing government systems">
+    <title>SpecOps: Specification-Driven Legacy Modernization</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #10b981;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #ffffff;
+            --bg-alt: #f9fafb;
+            --border: #e5e7eb;
+            --accent: #8b5cf6;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 4rem 0 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none"/><path d="M0 0L50 50L0 100L100 100L50 50L100 0Z" fill="rgba(255,255,255,0.03)"/></svg>');
+            opacity: 0.5;
+        }
+
+        header .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            font-weight: 300;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+        }
+
+        .hero-description {
+            font-size: 1.125rem;
+            max-width: 800px;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        /* Core Concept */
+        .core-concept {
+            padding: 4rem 0;
+            background: var(--bg-alt);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text);
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .concept-box {
+            background: white;
+            border-radius: 1rem;
+            padding: 3rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 15px rgba(0, 0, 0, 0.05);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .concept-box h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .concept-box p {
+            font-size: 1.125rem;
+            color: var(--text);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 2rem 0;
+        }
+
+        .highlight-box strong {
+            color: var(--primary-dark);
+            font-size: 1.125rem;
+        }
+
+        /* Benefits */
+        .benefits {
+            padding: 4rem 0;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Documentation */
+        .documentation {
+            padding: 4rem 0;
+            background: var(--bg-alt);
+        }
+
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .doc-card {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--text);
+            display: block;
+        }
+
+        .doc-card:hover {
+            border-color: var(--secondary);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .doc-card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .doc-icon {
+            font-size: 2rem;
+        }
+
+        .doc-card h3 {
+            font-size: 1.25rem;
+            color: var(--text);
+            margin: 0;
+        }
+
+        .doc-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .doc-card .arrow {
+            display: inline-block;
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .doc-card:hover .arrow {
+            transform: translateX(4px);
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .tagline {
+                font-size: 1.25rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .concept-box {
+                padding: 2rem;
+            }
+
+            .doc-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>⚡ SpecOps</h1>
+            <p class="tagline">Specification-Driven Legacy System Modernization</p>
+            <p class="hero-description">
+                SpecOps uses AI not just to transform legacy code, but to preserve institutional knowledge and create verified software specifications—reducing risk, speeding modernization efforts, and future-proofing your mission critical systems.
+            </p>
+        </div>
+    </header>
+
+    <section class="core-concept">
+        <div class="container">
+            <h2 class="section-title">The Core Concept</h2>
+            <p class="section-subtitle">
+                A new approach to modernizing government legacy systems that puts knowledge preservation first
+            </p>
+            
+            <div class="concept-box">
+                <h3>📋 Specifications Over Code</h3>
+                <p>
+                    Traditional AI-assisted modernization tries to <strong>transpile</strong> legacy code directly into modern languages. 
+                    SpecOps uses AI to <strong>compile</strong> institutional knowledge into comprehensive, human-verified software specifications 
+                    that become the authoritative source of truth for system behavior.
+                </p>
+                
+                <div class="highlight-box">
+                    <strong>The Key Difference:</strong> The specification is more valuable than the code. It captures institutional 
+                    knowledge, enables domain expert verification, and outlasts any particular technical implementation.
+                </div>
+
+                <p>
+                    <strong>How it works:</strong>
+                    <ul>
+                        <li>AI analyzes legacy systems and generates specifications in plain language</li>
+                        <li>Domain experts—policy makers, program administrators, business stakeholders—verify these specifications before any modern code is written</li>
+                        <li>Once verified, the specification becomes the source of truth that guides implementation and future changes</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Why SpecOps?</h2>
+            <p class="section-subtitle">
+                Addressing the unique challenges of government legacy system modernization
+            </p>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🧠</div>
+                    <h3>Knowledge Preservation</h3>
+                    <p>
+                        Capture institutional knowledge before experts retire. Create lasting documentation that outlives 
+                        any implementation. Preserve understanding of policy decisions and edge cases.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">✅</div>
+                    <h3>Domain Expert Verification</h3>
+                    <p>
+                        Policy experts can verify specifications in plain language—they don't need to review Java code. 
+                        Catch errors early when they're cheapest to fix, before they're embedded in new implementations.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🛡️</div>
+                    <h3>Risk Reduction</h3>
+                    <p>
+                        Clear audit trail of what changed and why. Specifications ensure modern systems implement policy 
+                        correctly. Changes managed with proper oversight and stakeholder involvement.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔄</div>
+                    <h3>Sustainable Modernization</h3>
+                    <p>
+                        Incremental approach via Strangler Fig pattern. Value delivered continuously, not just at project end. 
+                        Foundation for future modernization efforts that transcends technology choices.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤖</div>
+                    <h3>AI as Force Multiplier</h3>
+                    <p>
+                        AI handles tedious legacy code analysis and generates modern implementations from clear specifications. 
+                        Reduces manual effort while improving quality and consistency.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌐</div>
+                    <h3>Cross-Government Collaboration</h3>
+                    <p>
+                        Share instruction sets and patterns across agencies. A COBOL comprehension skill works whether you're 
+                        modernizing benefits in California or taxes in New York.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="documentation">
+        <div class="container">
+            <h2 class="section-title">Documentation</h2>
+            <p class="section-subtitle">
+                Everything you need to understand and implement the SpecOps approach
+            </p>
+
+            <div class="doc-grid">
+                <a href="../docs/MANIFESTO.md" class="doc-card">
+                    <div class="doc-card-header">
+                        <span class="doc-icon">📜</span>
+                        <h3>Manifesto</h3>
+                    </div>
+                    <p>
+                        The foundational principles and philosophy of SpecOps. Why specifications are the valuable artifact, 
+                        and how this approach differs from traditional modernization.
+                        <span class="arrow">→</span>
+                    </p>
+                </a>
+
+                <a href="../docs/COMPARISON.md" class="doc-card">
+                    <div class="doc-card-header">
+                        <span class="doc-icon">⚖️</span>
+                        <h3>Comparison Framework</h3>
+                    </div>
+                    <p>
+                        Detailed comparison of SpecOps vs. direct translation and traditional modernization across 11 dimensions. 
+                        Shows when each approach is appropriate.
+                        <span class="arrow">→</span>
+                    </p>
+                </a>
+
+                <a href="../docs/METHODOLOGY.md" class="doc-card">
+                    <div class="doc-card-header">
+                        <span class="doc-icon">📖</span>
+                        <h3>Methodology</h3>
+                    </div>
+                    <p>
+                        Step-by-step guide through all six phases of SpecOps: Discovery, Specification Generation, 
+                        Verification, Implementation, Testing, and Deployment.
+                        <span class="arrow">→</span>
+                    </p>
+                </a>
+
+                <a href="../docs/CORE-TOOLS.md" class="doc-card">
+                    <div class="doc-card-header">
+                        <span class="doc-icon">🛠️</span>
+                        <h3>Core Tools</h3>
+                    </div>
+                    <p>
+                        The technical infrastructure needed for SpecOps: specification repositories, AI agent instruction sets, 
+                        verification tools, and change management systems.
+                        <span class="arrow">→</span>
+                    </p>
+                </a>
+
+                <a href="../docs/TEAM.md" class="doc-card">
+                    <div class="doc-card-header">
+                        <span class="doc-icon">👥</span>
+                        <h3>Team Structure</h3>
+                    </div>
+                    <p>
+                        Roles, responsibilities, and staffing guidance for a SpecOps modernization project. 
+                        Team sizes from minimum viable (8-10 people) to full-scale (12-18 people).
+                        <span class="arrow">→</span>
+                    </p>
+                </a>
+
+                <a href="../docs/INSTRUCTION-SETS.md" class="doc-card">
+                    <div class="doc-card-header">
+                        <span class="doc-icon">💡</span>
+                        <h3>Instruction Sets</h3>
+                    </div>
+                    <p>
+                        Guide to creating and sharing AI agent instruction sets (skills) that enable SpecOps. 
+                        Includes examples for COBOL comprehension and specification generation.
+                        <span class="arrow">→</span>
+                    </p>
+                </a>
+
+                <a href="../docs/REFERENCE-IMPLEMENTATION.md" class="doc-card">
+                    <div class="doc-card-header">
+                        <span class="doc-icon">🚧</span>
+                        <h3>Reference Implementation</h3>
+                    </div>
+                    <p>
+                        <em>(In Development)</em> A complete, working example of SpecOps applied to a real legacy system. 
+                        Will provide reusable artifacts, templates, and lessons learned.
+                        <span class="arrow">→</span>
+                    </p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2 class="section-title">Get Started</h2>
+            <p class="section-subtitle">
+                Join the community building a better approach to legacy modernization
+            </p>
+            <div class="cta-buttons">
+                <a href="https://github.com/mheadd/spec-ops" class="btn btn-primary">
+                    View on GitHub
+                </a>
+                <a href="../docs/MANIFESTO.md" class="btn btn-secondary">
+                    Read the Manifesto
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>
+                <strong>SpecOps:</strong> Because the knowledge is what matters. Everything else is implementation details.
+            </p>
+            <p style="margin-top: 1rem; opacity: 0.7;">
+                <a href="https://github.com/mheadd/spec-ops">GitHub Repository</a> • 
+                Open Source • Community-Driven
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
