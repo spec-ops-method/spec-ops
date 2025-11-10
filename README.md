@@ -166,9 +166,9 @@ SpecOps may not be necessary when:
 ## Getting Started
 
 ### 1. Read the Core Documents
-- Start with the [Manifesto](MANIFESTO.md) to understand the philosophy
-- Review the [Comparison Framework](COMPARISON.md) to see if SpecOps fits your context
-- Study the [Methodology](METHODOLOGY.md) to understand the process
+- Start with the [Manifesto](public/MANIFESTO.md) to understand the philosophy
+- Review the [Comparison Framework](public/COMPARISON.md) to see if SpecOps fits your context
+- Study the [Methodology](public/METHODOLOGY.md) to understand the process
 
 ### 2. Assess Your Situation
 - Do you have domain experts available for verification?
