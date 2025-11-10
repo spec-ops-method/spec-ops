@@ -1,6 +1,27 @@
 # SpecOps Instruction Set Examples
 ## Building a Collaborative Library of AI Agent Skills for Legacy Modernization
 
+## Table of Contents
+- [Introduction](#introduction)
+- [The Evolving Nature of Instruction Sets](#the-evolving-nature-of-instruction-sets)
+  - [Instruction Sets Are a Work in Progress](#instruction-sets-are-a-work-in-progress)
+  - [Parallel Development](#parallel-development)
+- [Categories of Instruction Sets](#categories-of-instruction-sets)
+- [Instruction Set Maturity Levels](#instruction-set-maturity-levels)
+- [Opportunities for Collaboration](#opportunities-for-collaboration)
+  - [Who Can Contribute Instruction Sets?](#who-can-contribute-instruction-sets)
+  - [Models for Collaboration](#models-for-collaboration)
+- [Sharing Instruction Sets Across Governments](#sharing-instruction-sets-across-governments)
+  - [Why This Works for Government](#why-this-works-for-government)
+  - [What Can Be Shared](#what-can-be-shared)
+- [Example Instruction Sets](#example-instruction-sets)
+- [Getting Started: Building Your Instruction Set Library](#getting-started-building-your-instruction-set-library)
+- [Contributing to the SpecOps Instruction Library](#contributing-to-the-specops-instruction-library)
+- [Instruction Set Repository Structure](#instruction-set-repository-structure)
+- [Measuring Instruction Set Effectiveness](#measuring-instruction-set-effectiveness)
+- [Conclusion: Building Together](#conclusion-building-together)
+- [Getting Involved](#getting-involved)
+
 ---
 
 ## Introduction

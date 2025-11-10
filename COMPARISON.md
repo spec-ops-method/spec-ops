@@ -1,6 +1,30 @@
 # SpecOps Comparison Framework
 ## How SpecOps Differs from Other Legacy Modernization Approaches
 
+## Table of Contents
+- [The Core Distinction: Transpilation vs. Compilation](#the-core-distinction-transpilation-vs-compilation)
+- [Comparison Across Key Dimensions](#comparison-across-key-dimensions)
+  - [What is the Primary Output?](#what-is-the-primary-output)
+  - [What is Considered Valuable?](#what-is-considered-valuable)
+  - [Who Verifies Correctness?](#who-verifies-correctness)
+  - [How Are Errors Discovered?](#how-are-errors-discovered)
+  - [What Happens When Requirements Change?](#what-happens-when-requirements-change)
+  - [What Gets Preserved for the Future?](#what-gets-preserved-for-the-future)
+  - [What Role Does AI Play?](#what-role-does-ai-play)
+  - [How Long Does It Take?](#how-long-does-it-take)
+  - [What Happens If You Don't Have Domain Experts Available?](#what-happens-if-you-dont-have-domain-experts-available)
+  - [What Skills Does Your Team Need?](#what-skills-does-your-team-need)
+  - [What Does Success Look Like?](#what-does-success-look-like)
+- [Summary Matrix](#summary-matrix)
+- [When to Use Each Approach](#when-to-use-each-approach)
+  - [Direct Translation Works Best When](#direct-translation-works-best-when)
+  - [Traditional Manual Modernization Works Best When](#traditional-manual-modernization-works-best-when)
+  - [SpecOps Works Best When](#specops-works-best-when)
+- [The Transpilation vs. Compilation Mindset](#the-transpilation-vs-compilation-mindset)
+- [Conclusion](#conclusion)
+
+---
+
 ### The Core Distinction: Transpilation vs. Compilation
 
 **Traditional AI-assisted modernization focuses on transpilation** - the process of converting source code written in one programming language into equivalent source code in another programming language. The goal is direct translation: COBOL to Java, mainframe to cloud-native, legacy to modern.

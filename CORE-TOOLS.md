@@ -1,6 +1,23 @@
 # SpecOps Core Tools and Components
 ## The Technical Foundation for Specification-Driven Modernization
 
+## Table of Contents
+- [Core Components Overview](#core-components-overview)
+- [1. Specification Repository](#1-specification-repository)
+- [2. AI Agent Instruction Sets](#2-ai-agent-instruction-sets)
+- [3. AI Coding Agents](#3-ai-coding-agents)
+- [4. Verification and Validation Tools](#4-verification-and-validation-tools)
+- [5. Testing and Validation Infrastructure](#5-testing-and-validation-infrastructure)
+- [6. Change Management and Orchestration](#6-change-management-and-orchestration)
+- [7. Knowledge Management and Documentation](#7-knowledge-management-and-documentation)
+- [Minimum Viable SpecOps Toolchain](#minimum-viable-specops-toolchain)
+- [Advanced SpecOps Infrastructure](#advanced-specops-infrastructure)
+- [Tool Selection Principles](#tool-selection-principles)
+- [Integration with Existing Infrastructure](#integration-with-existing-infrastructure)
+- [Conclusion](#conclusion)
+
+---
+
 Just as CI/CD requires workflows and pipelines, and GitOps requires a Git repository and tools like [Argo CD](https://argo-cd.readthedocs.io/en/stable/), SpecOps requires a specific set of tools and components to function effectively. 
 
 This document outlines the core technical infrastructure needed to implement the SpecOps approach.

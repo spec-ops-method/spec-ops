@@ -1,6 +1,30 @@
 # SpecOps Team Structure and Staffing
 ## Building the Right Team for Specification-Driven Legacy Modernization
 
+## Table of Contents
+- [Introduction](#introduction)
+- [Core Team Structure](#core-team-structure)
+- [Leadership & Coordination](#leadership--coordination)
+  - [Program Manager / SpecOps Lead](#program-manager--specops-lead)
+  - [Product Owner](#product-owner)
+- [Technical Delivery](#technical-delivery)
+  - [Technical Lead / Architect](#technical-lead--architect)
+  - [AI Engineering Lead](#ai-engineering-lead)
+  - [Software Engineers](#software-engineers-3-5)
+  - [QA/Test Engineers](#qatest-engineers-2-3)
+  - [DevOps Engineer](#devops-engineer)
+- [Domain Expertise & Verification](#domain-expertise--verification)
+  - [Lead Domain Expert](#lead-domain-expert)
+  - [Domain Specialists](#domain-specialists-2-4)
+  - [Business Analyst / Technical Writer](#business-analyst--technical-writer)
+- [Extended Team & Specialized Roles](#extended-team--specialized-roles)
+- [Team Staffing Patterns Over Project Lifecycle](#team-staffing-patterns-over-project-lifecycle)
+- [Staffing Strategies](#staffing-strategies)
+- [Skills Development and Training](#skills-development-and-training)
+- [Team Success Factors](#team-success-factors)
+- [Recruiting and Team Assembly](#recruiting-and-team-assembly)
+- [Conclusion](#conclusion)
+
 ---
 
 ## Introduction

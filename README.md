@@ -2,7 +2,6 @@
 
 > AI is going to change the game on legacy system modernization, but maybe not in the way you think.
 
----
 
 ## What is SpecOps?
 

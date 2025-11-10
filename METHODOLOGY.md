@@ -1,6 +1,18 @@
 # SpecOps Methodology
 ## A Step-by-Step Guide to Specification-Driven Legacy System Modernization
 
+## Table of Contents
+- [Introduction](#introduction)
+- [Overview: The SpecOps Process](#overview-the-specops-process)
+- [Phase 1: Discovery and Assessment](#phase-1-discovery-and-assessment)
+- [Phase 2: Specification Generation](#phase-2-specification-generation)
+- [Phase 3: Specification Verification](#phase-3-specification-verification)
+- [Phase 4: Modern Implementation](#phase-4-modern-implementation)
+- [Phase 5: Testing and Validation](#phase-5-testing-and-validation)
+- [Phase 6: Deployment and Knowledge Transfer](#phase-6-deployment-and-knowledge-transfer)
+- [Integration with Strangler Fig Pattern](#integration-with-strangler-fig-pattern)
+- [Conclusion](#conclusion)
+
 ---
 
 ## Introduction

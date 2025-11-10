@@ -1,6 +1,17 @@
 # SpecOps Manifesto
 ## A Specification-Driven Approach to Legacy System Modernization
 
+## Table of Contents
+- [The Problem](#the-problem)
+- [What is Specification-Driven Development?](#what-is-specification-driven-development)
+- [Why Specifications Are the Valuable Artifact](#why-specifications-are-the-valuable-artifact)
+- [Core Principles of SpecOps](#core-principles-of-specops)
+- [What SpecOps Is Not](#what-specops-is-not)
+- [How SpecOps is Different](#how-specops-is-defferent)
+- [The Road Ahead](#the-road-ahead)
+
+---
+
 ### The Problem
 
 Government agencies face a mounting crisis: critical systems built decades ago in languages like COBOL, with retiring developers, sparse documentation, and institutional knowledge evaporating. The promise of AI-assisted modernization has generated enormous interest, with many approaches focused on direct code translation—converting COBOL to Java, mainframe logic to cloud-native applications, legacy systems to modern stacks.
