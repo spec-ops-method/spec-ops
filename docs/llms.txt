@@ -1,0 +1,143 @@
+# SpecOps: Specification-Driven Legacy System Modernization
+
+> Project URL: https://spec-ops.ai
+> Repository: https://github.com/mheadd/spec-ops
+> License: MIT
+
+## Overview
+
+SpecOps is a methodology for using AI to modernize legacy government systems by focusing on knowledge preservation and verified specifications rather than direct code translation. It builds on specification-driven development and GitOps principles to create a sustainable approach to legacy modernization.
+
+## Core Concept
+
+Traditional AI-assisted modernization tries to transpile legacy code directly into modern languages. SpecOps uses AI to compile institutional knowledge into comprehensive, human-verified software specifications that become the authoritative source of truth for system behavior.
+
+**Key Principle**: The specification is more valuable than the code. It captures institutional knowledge, enables domain expert verification, and outlasts any particular technical implementation.
+
+## The Problem
+
+Governments struggle to upgrade and maintain legacy systems. Typical modernization approaches focus on converting old code into new code, but that misses something fundamental. More important than updated software code is comprehensive, human-readable documentation on how a system is supposed to work.
+
+## The SpecOps Solution
+
+Use AI to develop comprehensive software specifications that become the authoritative source of truth for system behavior. Rather than just translating COBOL to Java, SpecOps captures and verifies institutional knowledge in plain language that domain experts can review and approve.
+
+## Built on Two Key Principles
+
+1. **Specification-Driven Development** – The specification precedes and governs all implementation. Once the legacy system's behavior is captured in a verified specification, AI coding agents use that specification to generate modern implementations—transforming documented knowledge into working code.
+
+2. **GitOps Thinking** – Like GitOps treats Git repositories as the single source of truth for infrastructure, SpecOps treats version-controlled specifications as the authoritative source of truth for system behavior. All future changes start with the specification—update the spec first, then update the code.
+
+## How It Works
+
+1. AI analyzes legacy systems and generates specifications in plain language
+2. Domain experts—policy makers, program administrators, business stakeholders—verify these specifications before any modern code is written
+3. Once verified, the specification becomes the source of truth that guides implementation and future changes
+4. All changes flow through the specification first, ensuring proper review and approval
+
+**Result**: Preserved institutional knowledge, reduced risk, and a foundation that outlasts any particular technology stack.
+
+## Core Principles
+
+1. **The Specification is the Source of Truth** - Like GitOps treats Git as authoritative for infrastructure, SpecOps treats specifications as authoritative for system behavior
+
+2. **Knowledge Preservation Precedes Translation** - Capture and verify what the system does before building replacements
+
+3. **Domain Experts Are the Arbiters** - Policy and business stakeholders verify specifications, not code
+
+4. **AI Assists, Humans Verify** - AI excels at analysis and generation; humans excel at judgment and verification
+
+5. **Changes Flow Through Specifications** - All modifications start with specification updates, reviewed and approved before implementation
+
+6. **Specifications Should Be Accessible** - Readable by domain experts while detailed enough to guide implementation
+
+## Key Benefits
+
+### For Government Agencies
+- **Knowledge Preservation**: Capture institutional knowledge before experts retire
+- **Risk Reduction**: Domain experts verify behavior before code is written
+- **Better Outcomes**: Specifications ensure modern systems implement policy correctly
+- **Sustainable Modernization**: Incremental approach via Strangler Fig pattern
+
+### For Technology Teams
+- **AI as Force Multiplier**: AI handles tedious legacy code analysis and generates code from specifications
+- **Clear Success Criteria**: Specifications define when implementations are "correct"
+- **Reusable Knowledge**: Instruction sets can be shared across projects
+
+## Six Phase Methodology
+
+1. **Discovery and Assessment** - Understand the legacy system and plan the modernization approach
+2. **Specification Generation** - Use AI agents to create initial specifications from legacy code
+3. **Specification Verification** - Domain experts review and validate specifications
+4. **Modern Implementation** - Generate new code from verified specifications
+5. **Testing and Validation** - Verify the implementation matches the specification
+6. **Deployment and Knowledge Transfer** - Move to production and preserve institutional knowledge
+
+## When to Use SpecOps
+
+**Particularly effective when:**
+- Legacy system is poorly documented
+- Institutional knowledge is at risk of being lost
+- Business logic is complex and critical to get right
+- Domain experts are available but can't verify code
+- Long-term knowledge preservation is valuable
+- Incremental modernization over years is expected
+- System behavior must be auditable and explainable
+
+**May not be necessary when:**
+- Legacy system is well-understood and well-documented
+- Business logic is simple and stable
+- Speed is prioritized over accuracy
+- Comprehensive test coverage already exists
+
+## Documentation
+
+- **Manifesto**: Foundational principles and philosophy
+- **Comparison Framework**: SpecOps vs. direct translation across 11 dimensions
+- **Core Tools**: Technical infrastructure needed (repos, AI agents, verification tools)
+- **Methodology**: Step-by-step guide through all six phases
+- **Team Structure**: Roles, responsibilities, and staffing guidance (8-18 people)
+- **Instruction Sets**: Guide to creating and sharing AI agent instruction sets
+- **Reference Implementation**: (In Development) Complete working example
+
+## Related Projects
+
+- **GitHub spec-kit**: https://github.com/github/spec-kit - Foundational toolkit for specification-driven development with AI
+- **GitOps**: Infrastructure as code methodology that inspired SpecOps' approach to source of truth
+- **Strangler Fig Pattern**: Incremental modernization pattern integrated into SpecOps methodology
+
+## Community
+
+SpecOps is designed to enable collaboration across government agencies and the civic tech community. Instruction sets and patterns are highly portable across organizations. A COBOL comprehension skill works whether you're modernizing benefits in California or taxes in New York.
+
+## Contributing
+
+We welcome contributions of:
+- Instruction Sets: AI agent skills for legacy platforms, languages, or domains
+- Experience Reports: Lessons learned from applying SpecOps
+- Tool Integrations: How to use SpecOps with different AI coding tools
+- Templates and Examples: Reusable artifacts for specifications and processes
+- Documentation Improvements: Clarifications, corrections, and enhancements
+
+See CONTRIBUTING.md for detailed guidelines.
+
+## Key Terminology
+
+- **Specification**: Comprehensive, human-readable documentation of system behavior that serves as the source of truth
+- **Specification-Driven Development**: Software development approach where specifications precede and govern implementation
+- **Transpilation**: Direct conversion of source code from one language to another (what SpecOps moves beyond)
+- **Compilation**: Bringing together authoritative information (how SpecOps uses AI to create specifications)
+- **Instruction Sets/Skills**: AI agent guidance for understanding legacy code and generating specifications
+- **Domain Experts**: Policy makers, program administrators, and business stakeholders who understand system requirements
+- **GitOps Thinking**: Using version-controlled repositories as single source of truth
+- **Strangler Fig Pattern**: Incremental replacement of legacy system components
+
+## Contact
+
+- GitHub Repository: https://github.com/mheadd/spec-ops
+- GitHub Discussions: https://github.com/mheadd/spec-ops/discussions
+- Website: https://spec-ops.ai
+
+## Tagline
+
+**SpecOps: Because the knowledge is what matters. Everything else is implementation details.**
