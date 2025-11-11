@@ -22,6 +22,11 @@
             --bg-alt: #f9fafb;
             --border: #e5e7eb;
             --accent: #8b5cf6;
+            --header-grad-start: #2563eb;
+            --header-grad-end: #8b5cf6;
+            --glow: 0 10px 30px rgba(37, 99, 235, 0.25);
+            --glass-bg: rgba(255,255,255,0.7);
+            --glass-border: rgba(255,255,255,0.35);
         }
 
         body {
@@ -39,7 +44,8 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            background: radial-gradient(1200px 500px at 20% -10%, rgba(255,255,255,0.15), transparent 60%),
+                        linear-gradient(135deg, var(--header-grad-start) 0%, var(--header-grad-end) 100%);
             color: white;
             padding: 4rem 0 5rem;
             position: relative;
@@ -67,6 +73,22 @@
             font-weight: 700;
             margin-bottom: 1rem;
             letter-spacing: -0.025em;
+        }
+
+        /* Gradient animated logo text */
+        .logo-gradient {
+            background: linear-gradient(90deg, #fff, #e5e7eb, #fff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 200% auto;
+            animation: shimmer 6s linear infinite;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
         }
 
         .tagline {
@@ -108,11 +130,14 @@
         }
 
         .concept-box {
-            background: white;
+            background: var(--glass-bg);
             border-radius: 1rem;
             padding: 3rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 15px rgba(0, 0, 0, 0.05);
-            max-width: 900px;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08), var(--glow);
+            backdrop-filter: saturate(140%) blur(12px);
+            -webkit-backdrop-filter: saturate(140%) blur(12px);
+            max-width: 1000px;
             margin: 0 auto;
         }
 
@@ -148,7 +173,7 @@
         /* Concept Cards */
         .concept-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 1.5rem;
             margin: 2rem 0;
         }
@@ -159,12 +184,22 @@
             border-radius: 1rem;
             padding: 1.75rem;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
         .concept-card:hover {
             border-color: var(--accent);
-            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.1);
-            transform: translateY(-3px);
+            box-shadow: 0 18px 35px rgba(139, 92, 246, 0.18);
+            transform: translateY(-4px);
+        }
+
+        .concept-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(139,92,246,0.08), transparent 60%);
+            pointer-events: none;
         }
 
         .concept-icon {
@@ -209,11 +244,13 @@
         }
 
         .benefit-card {
-            background: white;
-            border: 2px solid var(--border);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
             border-radius: 1rem;
             padding: 2rem;
             transition: all 0.3s ease;
+            backdrop-filter: saturate(140%) blur(10px);
+            -webkit-backdrop-filter: saturate(140%) blur(10px);
         }
 
         .benefit-card:hover {
@@ -260,12 +297,25 @@
             text-decoration: none;
             color: var(--text);
             display: block;
+            position: relative;
+            overflow: hidden;
         }
 
         .doc-card:hover {
             border-color: var(--secondary);
-            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.15);
-            transform: translateY(-2px);
+            box-shadow: 0 16px 30px rgba(16, 185, 129, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .doc-card::after {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -20%;
+            width: 60%;
+            height: 140%;
+            background: radial-gradient(closest-side, rgba(16,185,129,0.12), transparent 70%);
+            transform: rotate(25deg);
         }
 
         .doc-card-header {
@@ -305,6 +355,7 @@
         .cta {
             padding: 4rem 0;
             text-align: center;
+            background: linear-gradient(0deg, rgba(37, 99, 235, 0.05), transparent 40%);
         }
 
         .cta-buttons {
@@ -329,6 +380,7 @@
         .btn-primary {
             background: var(--primary);
             color: white;
+            box-shadow: var(--glow);
         }
 
         .btn-primary:hover {
@@ -341,6 +393,7 @@
             background: white;
             color: var(--primary);
             border-color: var(--primary);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.08);
         }
 
         .btn-secondary:hover {
@@ -356,6 +409,42 @@
             color: white;
             padding: 2rem 0;
             text-align: center;
+        }
+        /* Scroll reveal animation */
+        .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+        .reveal.in-view { opacity: 1; transform: none; }
+
+        /* Decorative header blobs */
+        .header-blob {
+            position: absolute;
+            filter: blur(40px);
+            opacity: 0.35;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .header-blob.b1 { width: 320px; height: 320px; background: #60a5fa; top: -60px; left: -40px; border-radius: 50%; }
+        .header-blob.b2 { width: 420px; height: 420px; background: #a78bfa; top: -80px; right: -80px; border-radius: 50%; }
+
+        /* Section title accent underline */
+        .section-title { position: relative; }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -12px;
+            width: 120px;
+            height: 4px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            opacity: 0.6;
+        }
+
+        /* Respect users who prefer reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .logo-gradient { animation: none; }
+            .reveal { opacity: 1 !important; transform: none !important; }
+            .concept-card:hover, .doc-card:hover, .benefit-card:hover { transform: none; }
         }
 
         footer a {
@@ -388,13 +477,18 @@
             .doc-grid {
                 grid-template-columns: 1fr;
             }
+            .concept-cards {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <header>
+        <div class="header-blob b1"></div>
+        <div class="header-blob b2"></div>
         <div class="container">
-            <h1>⚡ SpecOps</h1>
+            <h1 class="logo-gradient">⚡ SpecOps</h1>
             <p class="tagline">Specification-Driven Legacy System Modernization</p>
             <p class="hero-description">
                 SpecOps uses AI not just to transform legacy code, but to preserve institutional knowledge and create verified software specifications—reducing risk, speeding modernization efforts, and future-proofing your mission critical systems.
@@ -456,10 +550,10 @@
                 <div class="highlight-box" style="margin-top: 2rem;">
                     <strong>How it works:</strong>
                     <ul style="margin-top: 0.75rem; margin-bottom: 0;">
-                        <li style="margin-bottom: 0.5rem;">AI analyzes legacy systems and generates specifications in plain language</li>
+                        <li style="margin-bottom: 0.5rem;">AI analyzes legacy systems and generates comprehensive software specifications in plain language</li>
                         <li style="margin-bottom: 0.5rem;">Domain experts—policy makers, program administrators, business stakeholders—verify these specifications before any modern code is written</li>
-                        <li style="margin-bottom: 0.5rem;">Once verified, the specification becomes the source of truth that guides implementation and future changes</li>
-                        <li>All changes flow through the specification first, ensuring proper review and approval</li>
+                        <li style="margin-bottom: 0.5rem;">Once verified, the specification becomes the source of truth that guides AI-assisted implementation and future changes</li>
+                        <li>All changes to the system flow through the specification document first, ensuring proper review and approval</li>
                     </ul>
                 </div>
 
@@ -652,5 +746,26 @@
             </p>
         </div>
     </footer>
+        <script>
+        // Lightweight scroll reveal for key elements (no text changes)
+        (function() {
+            var els = document.querySelectorAll('.concept-card, .benefit-card, .doc-card, .section-title, .concept-box, .hero-description');
+            els.forEach(function(el){ el.classList.add('reveal'); });
+            if ('IntersectionObserver' in window) {
+                var observer = new IntersectionObserver(function(entries){
+                    entries.forEach(function(entry){
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('in-view');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15 });
+                els.forEach(function(el){ observer.observe(el); });
+            } else {
+                // Fallback: show all
+                els.forEach(function(el){ el.classList.add('in-view'); });
+            }
+        })();
+        </script>
 </body>
 </html>
