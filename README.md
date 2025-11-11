@@ -227,7 +227,15 @@ SpecOps was developed to address the unique challenges of government legacy syst
 
 The methodology combines proven practices from incremental modernization (Strangler Fig pattern), infrastructure as code (GitOps), and specification-driven development, adapted for the era of AI-assisted software development.
 
-The goal: Make legacy modernization more effective, sustainable, and knowledge-preserving for everyone.
+### Built on Specification-Driven Development
+
+SpecOps builds on the foundation of [specification-driven development](https://github.com/github/spec-kit), an approach where specifications are created before implementation and serve as the authoritative source of truth. As GitHub's [spec-kit](https://github.com/github/spec-kit) describes it:
+
+> "Specification-driven development is a software development approach where you write a detailed specification of your software's behavior before writing any implementation code. The specification serves as both documentation and a contract that your implementation must fulfill."
+
+GitHub's spec-kit provides essential tooling for this approach, including specification templates, validation tools, and integration with AI coding agents. SpecOps extends these principles specifically for legacy system modernization, adding workflows for extracting specifications from existing systems, domain expert verification processes, and patterns for incremental replacement.
+
+**The goal**: Make legacy modernization more effective, sustainable, and knowledge-preserving for everyone.
 
 ---
 
