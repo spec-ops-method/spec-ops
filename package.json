@@ -1,0 +1,12 @@
+{
+  "name": "spec-ops",
+  "private": true,
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build:assets": "node scripts/gen-assets.js"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5"
+  }
+}
