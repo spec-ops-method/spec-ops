@@ -145,6 +145,57 @@
             font-size: 1.125rem;
         }
 
+        /* Concept Cards */
+        .concept-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .concept-card {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 1rem;
+            padding: 1.75rem;
+            transition: all 0.3s ease;
+        }
+
+        .concept-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .concept-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .concept-card h4 {
+            font-size: 1.25rem;
+            color: var(--text);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .concept-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .concept-card ul {
+            margin: 0.75rem 0 0 1.25rem;
+            color: var(--text-light);
+        }
+
+        .concept-card li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
         /* Benefits */
         .benefits {
             padding: 4rem 0;
@@ -360,33 +411,62 @@
             
             <div class="concept-box">
                 <h3>📋 Specifications Over Code</h3>
-                <p>
-                    Traditional AI-assisted modernization tries to <strong>transpile</strong> legacy code directly into modern languages. 
-                    SpecOps uses AI to <strong>compile</strong> institutional knowledge into comprehensive, human-verified software specifications 
-                    that become the authoritative source of truth for system behavior.
-                </p>
-
-                <p>
-                    SpecOps builds on the idea of <a href="https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/">specification-driven development</a> - rather than treating specifications as documentation 
-                    that follows implementation, the specification becomes the authoritative artifact that precedes and governs all 
-                    implementation. All changes flow through the specification first, ensuring proper review and approval before 
-                    AI agents generate or modify code.
-                </p>
                 
-                <div class="highlight-box">
-                    <strong>The Key Difference:</strong> The specification is more valuable than the code. It captures institutional 
-                    knowledge, enables domain expert verification, and outlasts any particular technical implementation. Like GitOps 
-                    treats Git repositories as the single source of truth for infrastructure, SpecOps treats specifications as the 
-                    authoritative source  of truth for how a system is supposed to work.
+                <div class="concept-cards">
+                    <div class="concept-card">
+                        <span class="concept-icon">❗</span>
+                        <h4>The Problem</h4>
+                        <p>
+                            Governments struggle to upgrade and maintain legacy systems. Typical modernization approaches 
+                            focus on converting old code into new code, but that misses something fundamental. More important 
+                            than updated software code is comprehensive, human-readable documentation on how a system is 
+                            supposed to work.
+                        </p>
+                    </div>
+
+                    <div class="concept-card">
+                        <span class="concept-icon">💡</span>
+                        <h4>The SpecOps Solution</h4>
+                        <p>
+                            Use AI to develop comprehensive software specifications that become the authoritative source of 
+                            truth for system behavior. Rather than just translating COBOL to Java, we capture and verify 
+                            institutional knowledge in plain language that domain experts can review and approve.
+                        </p>
+                    </div>
+
+                    <div class="concept-card">
+                        <span class="concept-icon">🔧</span>
+                        <h4>Specification-Driven Development</h4>
+                        <p>
+                            The specification precedes and governs all implementation. Once the legacy system's behavior is 
+                            captured in a verified specification, AI coding agents use that specification to generate modern 
+                            implementations—transforming documented knowledge into working code.
+                        </p>
+                    </div>
+
+                    <div class="concept-card">
+                        <span class="concept-icon">🔄</span>
+                        <h4>GitOps Thinking</h4>
+                        <p>
+                            Like GitOps treats Git repositories as the single source of truth for infrastructure, SpecOps 
+                            treats version-controlled specifications as the authoritative source of truth for system behavior. 
+                            All future changes start with the specification—update the spec first, then update the code.
+                        </p>
+                    </div>
                 </div>
 
-                <p>
+                <div class="highlight-box" style="margin-top: 2rem;">
                     <strong>How it works:</strong>
-                    <ul>
-                        <li>AI analyzes legacy systems and generates specifications in plain language</li>
-                        <li>Domain experts—policy makers, program administrators, business stakeholders—verify these specifications before any modern code is written</li>
-                        <li>Once verified, the specification becomes the source of truth that guides implementation and future changes</li>
+                    <ul style="margin-top: 0.75rem; margin-bottom: 0;">
+                        <li style="margin-bottom: 0.5rem;">AI analyzes legacy systems and generates specifications in plain language</li>
+                        <li style="margin-bottom: 0.5rem;">Domain experts—policy makers, program administrators, business stakeholders—verify these specifications before any modern code is written</li>
+                        <li style="margin-bottom: 0.5rem;">Once verified, the specification becomes the source of truth that guides implementation and future changes</li>
+                        <li>All changes flow through the specification first, ensuring proper review and approval</li>
                     </ul>
+                </div>
+
+                <p style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; font-style: italic; color: #6b7280; text-align: center;">
+                    <strong>The result:</strong> Preserved institutional knowledge, reduced risk, and a foundation that outlasts any particular technology stack.
                 </p>
             </div>
         </div>
