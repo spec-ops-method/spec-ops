@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SpecOps Frequently Asked Questions" />
+  <title>SpecOps FAQ</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./icon-180.png">
+  <meta property="og:title" content="SpecOps FAQ" />
+  <meta property="og:description" content="Answers to common questions about Specification-Driven Legacy Modernization." />
+  <meta property="og:image" content="./og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SpecOps FAQ" />
+  <meta name="twitter:description" content="Answers to common questions about Specification-Driven Legacy Modernization." />
+  <meta name="twitter:image" content="./og-image.png" />
+  <style>
+    * { box-sizing: border-box; }
+    :root {
+      --primary: #2563eb; --primary-dark: #1e40af; --secondary: #10b981;
+      --text: #1f2937; --text-light: #6b7280; --bg: #ffffff; --bg-alt: #f9fafb;
+      --border: #e5e7eb; --accent: #8b5cf6; --glass-bg: rgba(255,255,255,0.7);
+      --glass-border: rgba(255,255,255,0.35); --glow: 0 10px 30px rgba(37,99,235,.25);
+    }
+    body { margin: 0; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
+
+    header {
+      background: radial-gradient(1200px 500px at 20% -10%, rgba(255,255,255,0.15), transparent 60%),
+                  linear-gradient(135deg, #2563eb 0%, #8b5cf6 100%);
+      color: #fff; padding: 3.5rem 0 3rem; position: relative; overflow: hidden;
+    }
+    header h1 { font-size: 2.25rem; margin: 0 0 .5rem; letter-spacing: -0.02em; }
+    header p { font-size: 1.125rem; opacity: .95; margin: 0; }
+
+    .toolbar { background: var(--bg); border-bottom: 1px solid var(--border); }
+    .toolbar .container { display: flex; align-items: center; gap: .75rem; padding: .75rem 1.25rem; }
+    .btn-link { color: var(--primary); text-decoration: none; font-weight: 600; border: 2px solid var(--primary); padding: .4rem .8rem; border-radius: .5rem; }
+    .btn-link:hover { background: var(--primary); color: #fff; }
+
+    main { padding: 2rem 0 4rem; background: var(--bg-alt); }
+    .content {
+      background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 1rem;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08), var(--glow);
+      backdrop-filter: saturate(140%) blur(10px); -webkit-backdrop-filter: saturate(140%) blur(10px);
+      padding: 2rem; overflow: hidden;
+    }
+
+    /* Markdown typography */
+    .md h1 { font-size: 2rem; margin: 1.5rem 0 .75rem; }
+    .md h2 { font-size: 1.6rem; margin: 1.25rem 0 .5rem; border-bottom: 1px solid var(--border); padding-bottom: .25rem; }
+    .md h3 { font-size: 1.25rem; margin: 1rem 0 .5rem; }
+    .md p { margin: .75rem 0; color: var(--text); }
+    .md ul { margin: .5rem 0 .75rem 1.25rem; }
+    .md li { margin: .35rem 0; }
+    .md code { background: #1118270d; padding: .15rem .35rem; border-radius: .25rem; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: .95em; }
+    .md pre { background: #0b1020; color: #e5e7eb; padding: 1rem; border-radius: .5rem; overflow: auto; }
+    .md a { color: var(--primary-dark); text-decoration: none; }
+    .md a:hover { text-decoration: underline; }
+    .md hr { border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+    .md table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    .md th, .md td { border: 1px solid var(--border); padding: .5rem .6rem; text-align: left; }
+
+    footer { background: var(--text); color: #fff; padding: 1.5rem 0; text-align: center; }
+    footer a { color: var(--secondary); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 1.75rem; }
+      header p { font-size: 1rem; }
+      .content { padding: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>❓ SpecOps FAQ</h1>
+      <p>Frequently Asked Questions about Specification-Driven Legacy Modernization</p>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <div class="container">
+      <a href="./index.html" class="btn-link">← Back to Home</a>
+      <a href="https://github.com/mheadd/spec-ops" class="btn-link">View on GitHub</a>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <div id="faq" class="content md">
+        <p>Loading FAQ…</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>
+        <strong>SpecOps:</strong> Because the knowledge is what matters. Everything else is implementation details.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Use a small, widely available Markdown renderer via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    (async function(){
+      try {
+        // Prefer repository raw content to avoid keeping two copies
+        const res = await fetch('https://raw.githubusercontent.com/mheadd/spec-ops/main/FAQ.md', { cache: 'no-store' });
+        if (!res.ok) throw new Error('Failed to fetch FAQ.md');
+        const md = await res.text();
+        const html = marked.parse(md, { breaks: true });
+        const el = document.getElementById('faq');
+        el.innerHTML = html;
+        // Rewrite relative links that point into repo files so they resolve to GitHub
+        const base = 'https://github.com/mheadd/spec-ops/blob/main/';
+        el.querySelectorAll('a[href]').forEach(a => {
+          const href = a.getAttribute('href');
+          if (!href) return;
+          if (href.startsWith('http')) return; // leave absolute URLs
+          if (href.startsWith('#')) return; // anchors within page
+          if (href.startsWith('public/')) {
+            a.setAttribute('href', base + href);
+            a.setAttribute('target', '_blank');
+            a.setAttribute('rel', 'noopener');
+            return;
+          }
+          if (href.endsWith('.md')) {
+            a.setAttribute('href', base + href.replace(/^\.\//, ''));
+            a.setAttribute('target', '_blank');
+            a.setAttribute('rel', 'noopener');
+          }
+        });
+      } catch (e) {
+        document.getElementById('faq').innerHTML = '<p>Unable to load FAQ at this time.</p>';
+        // eslint-disable-next-line no-console
+        console.error(e);
+      }
+    })();
+  </script>
+</body>
+</html>
