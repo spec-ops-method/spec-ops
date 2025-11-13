@@ -24,130 +24,10 @@
     <meta name="twitter:title" content="SpecOps: Specification-Driven Legacy Modernization">
     <meta name="twitter:description" content="Specifications over code. Preserve institutional knowledge, verify behavior, and generate modern systems with AI.">
     <meta name="twitter:image" content="./og-image.png">
+    <link rel="stylesheet" href="./styles.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1e40af;
-            --secondary: #10b981;
-            --text: #1f2937;
-            --text-light: #6b7280;
-            --bg: #ffffff;
-            --bg-alt: #f9fafb;
-            --border: #e5e7eb;
-            --accent: #8b5cf6;
-            --header-grad-start: #2563eb;
-            --header-grad-end: #8b5cf6;
-            --glow: 0 10px 30px rgba(37, 99, 235, 0.25);
-            --glass-bg: rgba(255,255,255,0.7);
-            --glass-border: rgba(255,255,255,0.35);
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background: var(--bg);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Header */
-        header {
-            background: radial-gradient(1200px 500px at 20% -10%, rgba(255,255,255,0.15), transparent 60%),
-                        linear-gradient(135deg, var(--header-grad-start) 0%, var(--header-grad-end) 100%);
-            color: white;
-            padding: 4rem 0 5rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none"/><path d="M0 0L50 50L0 100L100 100L50 50L100 0Z" fill="rgba(255,255,255,0.03)"/></svg>');
-            opacity: 0.5;
-        }
-
-        header .container {
-            position: relative;
-            z-index: 1;
-        }
-
-        h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            letter-spacing: -0.025em;
-        }
-
-        /* Gradient animated logo text */
-        .logo-gradient {
-            background: linear-gradient(90deg, #fff, #e5e7eb, #fff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            background-size: 200% auto;
-            animation: shimmer 6s linear infinite;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
-        }
-
-        @keyframes shimmer {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 200% 50%; }
-        }
-
-        .tagline {
-            font-size: 1.5rem;
-            font-weight: 300;
-            opacity: 0.95;
-            margin-bottom: 2rem;
-        }
-
-        .hero-description {
-            font-size: 1.125rem;
-            max-width: 800px;
-            opacity: 0.9;
-            line-height: 1.7;
-        }
-
-        /* Core Concept */
-        .core-concept {
-            padding: 4rem 0;
-            background: var(--bg-alt);
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text);
-            text-align: center;
-        }
-
-        .section-subtitle {
-            font-size: 1.25rem;
-            color: var(--text-light);
-            text-align: center;
-            margin-bottom: 3rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
+        /* Page-specific styles retained after extraction */
+        .core-concept { padding: 4rem 0; background: var(--bg-alt); }
         .concept-box {
             background: var(--glass-bg);
             border-radius: 1rem;
@@ -422,91 +302,20 @@
             box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
         }
 
-        /* Footer */
-        footer {
-            background: var(--text);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
-        /* Scroll reveal animation */
-        .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
-        .reveal.in-view { opacity: 1; transform: none; }
-
-        /* Decorative header blobs */
-        .header-blob {
-            position: absolute;
-            filter: blur(40px);
-            opacity: 0.35;
-            z-index: 0;
-            pointer-events: none;
-        }
-        .header-blob.b1 { width: 320px; height: 320px; background: #60a5fa; top: -60px; left: -40px; border-radius: 50%; }
-        .header-blob.b2 { width: 420px; height: 420px; background: #a78bfa; top: -80px; right: -80px; border-radius: 50%; }
-
-        /* Section title accent underline */
-        .section-title { position: relative; }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: -12px;
-            width: 120px;
-            height: 4px;
-            border-radius: 999px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            opacity: 0.6;
-        }
-
-        /* Respect users who prefer reduced motion */
-        @media (prefers-reduced-motion: reduce) {
-            .logo-gradient { animation: none; }
-            .reveal { opacity: 1 !important; transform: none !important; }
-            .concept-card:hover, .doc-card:hover, .benefit-card:hover { transform: none; }
-        }
-
-        footer a {
-            color: var(--secondary);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive */
+        /* Responsive additions specific to page layout */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            .tagline {
-                font-size: 1.25rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .concept-box {
-                padding: 2rem;
-            }
-
-            .doc-grid {
-                grid-template-columns: 1fr;
-            }
-            .concept-cards {
-                grid-template-columns: 1fr;
-            }
+            .concept-box { padding: 2rem; }
+            .doc-grid { grid-template-columns: 1fr; }
+            .concept-cards { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="header-blob b1"></div>
-        <div class="header-blob b2"></div>
         <div class="container">
+            <nav class="top-nav" aria-label="Primary">
+                <a href="./faq.html">FAQ</a>
+            </nav>
             <h1 class="logo-gradient">⚡ SpecOps</h1>
             <p class="tagline">Specification-Driven Legacy System Modernization</p>
             <p class="hero-description">

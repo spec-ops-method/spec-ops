@@ -30,7 +30,7 @@ Running the build script produces the following PNG files:
 - Node.js 16+ (includes npm)
 - The `sharp` library (installed automatically via `npm install`)
 
-## Building Assets
+## Building Assets & Styles
 
 ### First-time setup
 
@@ -57,6 +57,42 @@ This executes `scripts/gen-assets.js`, which:
 - When deploying the website to production
 - Before committing changes that affect branding
 
+### Minify CSS
+
+The website's shared stylesheet lives at `docs/styles.css`. A minified version (`docs/styles.min.css`) is produced for production using [csso](https://github.com/css/csso).
+
+Run:
+
+```bash
+npm run build:css
+```
+
+This executes `scripts/minify-css.js`, which:
+1. Reads `docs/styles.css`
+2. Minifies it with structural optimizations
+3. Writes `docs/styles.min.css`
+4. Reports original vs minified size
+
+Both `docs/index.html` and `docs/faq.html` reference the minified file:
+
+```html
+<link rel="stylesheet" href="./styles.min.css">
+```
+
+### Combined Build
+
+You can run both asset generation and CSS minification with a single command:
+
+```bash
+npm run build
+```
+
+This sequentially runs:
+1. `build:assets` – raster icons & OG image
+2. `build:css` – stylesheet minification
+
+Include this in deployment workflows to ensure fresh artifacts.
+
 ## The Build Script
 
 `scripts/gen-assets.js` uses the [sharp](https://sharp.pixelplumbing.com/) library to convert SVGs to PNGs. Key implementation details:
@@ -66,7 +102,7 @@ This executes `scripts/gen-assets.js`, which:
 - **Automated directory creation** — Creates output directories if missing
 - **Error handling** — Exits with code 1 on failure for CI/CD compatibility
 
-## Integration with HTML
+## Integration with HTML & CSS
 
 The generated PNG assets are referenced in `docs/index.html`:
 
@@ -108,7 +144,8 @@ Potential improvements to the asset pipeline:
 - **Dark mode variant** — Generate alternate OG image for `prefers-color-scheme: dark`
 - **ICO bundle** — Create multi-resolution `.ico` file for maximum legacy support
 - **Automated optimization** — Add `oxipng` or `pngquant` for further size reduction
-- **CI integration** — Run asset generation automatically on pre-commit hooks
+- **CI integration** — Run asset generation and CSS minification automatically on pre-commit / CI
+- **CSS splitting** — Separate critical CSS, inline above-the-fold styles
 - **PWA manifest** — Generate `manifest.json` with icon references for installability
 
 ## Related Documentation

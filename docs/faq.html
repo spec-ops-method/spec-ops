@@ -16,69 +16,41 @@
   <meta name="twitter:title" content="SpecOps FAQ" />
   <meta name="twitter:description" content="Answers to common questions about Specification-Driven Legacy Modernization." />
   <meta name="twitter:image" content="./og-image.png" />
+  <link rel="stylesheet" href="./styles.min.css">
   <style>
-    html { scroll-behavior: smooth; }
-    * { box-sizing: border-box; }
-    :root {
-      --primary: #2563eb; --primary-dark: #1e40af; --secondary: #10b981;
-      --text: #1f2937; --text-light: #6b7280; --bg: #ffffff; --bg-alt: #f9fafb;
-      --border: #e5e7eb; --accent: #8b5cf6; --glass-bg: rgba(255,255,255,0.7);
-      --glass-border: rgba(255,255,255,0.35); --glow: 0 10px 30px rgba(37,99,235,.25);
-    }
-    body { margin: 0; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
-
-    header {
-      background: radial-gradient(1200px 500px at 20% -10%, rgba(255,255,255,0.15), transparent 60%),
-                  linear-gradient(135deg, #2563eb 0%, #8b5cf6 100%);
-      color: #fff; padding: 3.5rem 0 3rem; position: relative; overflow: hidden;
-    }
-    header h1 { font-size: 2.25rem; margin: 0 0 .5rem; letter-spacing: -0.02em; }
-    header p { font-size: 1.125rem; opacity: .95; margin: 0; }
-
-    .toolbar { background: var(--bg); border-bottom: 1px solid var(--border); }
-    .toolbar .container { display: flex; align-items: center; gap: .75rem; padding: .75rem 1.25rem; }
-    .btn-link { color: var(--primary); text-decoration: none; font-weight: 600; border: 2px solid var(--primary); padding: .4rem .8rem; border-radius: .5rem; }
-    .btn-link:hover { background: var(--primary); color: #fff; }
-
-    main { padding: 2rem 0 4rem; background: var(--bg-alt); }
-    .content {
-      background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 1rem;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08), var(--glow);
-      backdrop-filter: saturate(140%) blur(10px); -webkit-backdrop-filter: saturate(140%) blur(10px);
-      padding: 2rem; overflow: hidden;
-    }
-
-    /* Markdown typography */
-    .md h1 { font-size: 2rem; margin: 1.5rem 0 .75rem; }
-    .md h2 { font-size: 1.6rem; margin: 1.25rem 0 .5rem; border-bottom: 1px solid var(--border); padding-bottom: .25rem; }
-    .md h3 { font-size: 1.25rem; margin: 1rem 0 .5rem; }
-    .md p { margin: .75rem 0; color: var(--text); }
-    .md ul { margin: .5rem 0 .75rem 1.25rem; }
-    .md li { margin: .35rem 0; }
-    .md code { background: #1118270d; padding: .15rem .35rem; border-radius: .25rem; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: .95em; }
-    .md pre { background: #0b1020; color: #e5e7eb; padding: 1rem; border-radius: .5rem; overflow: auto; }
-    .md a { color: var(--primary-dark); text-decoration: none; }
-    .md a:hover { text-decoration: underline; }
-    .md hr { border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0; }
-    .md table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-    .md th, .md td { border: 1px solid var(--border); padding: .5rem .6rem; text-align: left; }
-
-    footer { background: var(--text); color: #fff; padding: 1.5rem 0; text-align: center; }
-    footer a { color: var(--secondary); text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
-
-    @media (max-width: 768px) {
-      header h1 { font-size: 1.75rem; }
-      header p { font-size: 1rem; }
-      .content { padding: 1.25rem; }
-    }
+    /* Page-specific overrides & FAQ layout */
+    header { padding:3.5rem 0 3rem; }
+    header h1 { font-size:2.25rem; margin:0 0 .5rem; letter-spacing:-0.02em; }
+    header p { font-size:1.125rem; opacity:.95; margin:0; }
+    .container { max-width:1100px; padding:0 1.25rem; }
+    main { padding:2rem 0 4rem; background:var(--bg-alt); }
+    .content { background: var(--glass-bg); border:1px solid var(--glass-border); border-radius:1rem; box-shadow:0 8px 30px rgba(0,0,0,0.08), var(--glow); backdrop-filter:saturate(140%) blur(10px); -webkit-backdrop-filter:saturate(140%) blur(10px); padding:2rem; overflow:hidden; }
+    .toolbar { background: var(--bg); border-bottom:1px solid var(--border); }
+    .toolbar .container { display:flex; align-items:center; gap:.75rem; padding:.75rem 1.25rem; }
+    .btn-link { color:var(--primary); text-decoration:none; font-weight:600; border:2px solid var(--primary); padding:.4rem .8rem; border-radius:.5rem; }
+    .btn-link:hover { background:var(--primary); color:#fff; }
+    /* Markdown typography within FAQ */
+    .md h1 { font-size:2rem; margin:1.5rem 0 .75rem; }
+    .md h2 { font-size:1.6rem; margin:1.25rem 0 .5rem; border-bottom:1px solid var(--border); padding-bottom:.25rem; }
+    .md h3 { font-size:1.25rem; margin:1rem 0 .5rem; }
+    .md p { margin:.75rem 0; color:var(--text); }
+    .md ul { margin:.5rem 0 .75rem 1.25rem; }
+    .md li { margin:.35rem 0; }
+    .md code { background:#1118270d; padding:.15rem .35rem; border-radius:.25rem; font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace; font-size:.95em; }
+    .md pre { background:#0b1020; color:#e5e7eb; padding:1rem; border-radius:.5rem; overflow:auto; }
+    .md a { color:var(--primary-dark); text-decoration:none; }
+    .md a:hover { text-decoration:underline; }
+    .md hr { border:0; border-top:1px solid var(--border); margin:1.5rem 0; }
+    .md table { width:100%; border-collapse:collapse; margin:1rem 0; }
+    .md th, .md td { border:1px solid var(--border); padding:.5rem .6rem; text-align:left; }
+    footer { padding:1.5rem 0; }
+    @media (max-width:768px){ header h1{font-size:1.75rem;} header p{font-size:1rem;} .content{padding:1.25rem;} }
   </style>
 </head>
 <body>
   <header>
     <div class="container">
-      <h1>❓ SpecOps FAQ</h1>
+      <h1 class="logo-gradient">⚡ SpecOps FAQ</h1>
       <p>Frequently Asked Questions about Specification-Driven Legacy Modernization</p>
     </div>
   </header>
