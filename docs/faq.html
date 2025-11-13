@@ -17,6 +17,7 @@
   <meta name="twitter:description" content="Answers to common questions about Specification-Driven Legacy Modernization." />
   <meta name="twitter:image" content="./og-image.png" />
   <style>
+    html { scroll-behavior: smooth; }
     * { box-sizing: border-box; }
     :root {
       --primary: #2563eb; --primary-dark: #1e40af; --secondary: #10b981;
@@ -107,14 +108,22 @@
 
   <!-- Use a small, widely available Markdown renderer via CDN -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked-gfm-heading-id/lib/index.umd.js"></script>
   <script>
     (async function(){
       try {
+        // Configure marked to use GitHub-style heading IDs so FAQ TOC anchors match
+        if (window.markedGfmHeadingId && window.marked && typeof marked.use === 'function') {
+          marked.use(markedGfmHeadingId.gfmHeadingId());
+        }
+        if (window.marked && typeof marked.setOptions === 'function') {
+          marked.setOptions({ gfm: true, breaks: true, headerIds: true, mangle: false });
+        }
         // Prefer repository raw content to avoid keeping two copies
         const res = await fetch('https://raw.githubusercontent.com/mheadd/spec-ops/main/FAQ.md', { cache: 'no-store' });
         if (!res.ok) throw new Error('Failed to fetch FAQ.md');
         const md = await res.text();
-        const html = marked.parse(md, { breaks: true });
+        const html = marked.parse(md);
         const el = document.getElementById('faq');
         el.innerHTML = html;
         // Rewrite relative links that point into repo files so they resolve to GitHub
