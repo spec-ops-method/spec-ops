@@ -130,9 +130,13 @@
             line-height: 1.6;
         }
 
-        /* Benefits */
-        .benefits {
+        /* Benefits & Tools */
+        .benefits, .tools {
             padding: 4rem 0;
+        }
+
+        .tools {
+            background: var(--bg-alt);
         }
 
         .benefits-grid {
@@ -314,6 +318,7 @@
     <header>
         <div class="container">
             <nav class="top-nav" aria-label="Primary">
+                <a href="#tools">Tools</a>
                 <a href="./faq.html">FAQ</a>
             </nav>
             <h1 class="logo-gradient">⚡ SpecOps</h1>
@@ -457,6 +462,44 @@
         </div>
     </section>
 
+    <section class="tools" id="tools">
+        <div class="container">
+            <h2 class="section-title">Tools & Resources</h2>
+            <p class="section-subtitle">
+                Ready-to-use tools to start implementing the SpecOps approach in your organization
+            </p>
+
+            <div class="benefits-grid">
+                <a href="https://github.com/spec-ops-method/spec-ops-action" class="benefit-card" style="text-decoration: none; cursor: pointer;">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>SpecOps Action</h3>
+                    <p>
+                        GitHub Action for integrating SpecOps into your CI/CD workflows. Automate specification validation 
+                        and keep your specs in sync with your codebase.
+                    </p>
+                </a>
+
+                <a href="https://github.com/spec-ops-method/spec-ops-agents-file" class="benefit-card" style="text-decoration: none; cursor: pointer;">
+                    <div class="benefit-icon">🤖</div>
+                    <h3>AGENTS.md Template</h3>
+                    <p>
+                        Standard template for configuring AI coding agents to work with your specifications. 
+                        Define agent behaviors, constraints, and verification rules.
+                    </p>
+                </a>
+
+                <a href="https://github.com/spec-ops-method/spec-ops-demo" class="benefit-card" style="text-decoration: none; cursor: pointer;">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>SpecOps Demo</h3>
+                    <p>
+                        A complete example implementation showing the SpecOps approach in action. 
+                        Learn by exploring a real specification-driven modernization project.
+                    </p>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <section class="documentation">
         <div class="container">
             <h2 class="section-title">Documentation</h2>
@@ -465,7 +508,7 @@
             </p>
 
             <div class="doc-grid">
-                <a href="https://github.com/mheadd/spec-ops/blob/main/public/MANIFESTO.md" class="doc-card">
+                <a href="https://github.com/spec-ops-method/spec-ops/blob/main/public/MANIFESTO.md" class="doc-card">
                     <div class="doc-card-header">
                         <span class="doc-icon">📜</span>
                         <h3>Manifesto</h3>
@@ -477,7 +520,7 @@
                     </p>
                 </a>
 
-                <a href="https://github.com/mheadd/spec-ops/blob/main/public/COMPARISON.md" class="doc-card">
+                <a href="https://github.com/spec-ops-method/spec-ops/blob/main/public/COMPARISON.md" class="doc-card">
                     <div class="doc-card-header">
                         <span class="doc-icon">⚖️</span>
                         <h3>Comparison Framework</h3>
@@ -489,7 +532,7 @@
                     </p>
                 </a>
 
-                <a href="https://github.com/mheadd/spec-ops/blob/main/public/METHODOLOGY.md" class="doc-card">
+                <a href="https://github.com/spec-ops-method/spec-ops/blob/main/public/METHODOLOGY.md" class="doc-card">
                     <div class="doc-card-header">
                         <span class="doc-icon">📖</span>
                         <h3>Methodology</h3>
@@ -501,7 +544,7 @@
                     </p>
                 </a>
 
-                <a href="https://github.com/mheadd/spec-ops/blob/main/public/CORE-TOOLS.md" class="doc-card">
+                <a href="https://github.com/spec-ops-method/spec-ops/blob/main/public/CORE-TOOLS.md" class="doc-card">
                     <div class="doc-card-header">
                         <span class="doc-icon">🛠️</span>
                         <h3>Core Tools</h3>
@@ -513,7 +556,7 @@
                     </p>
                 </a>
 
-                <a href="https://github.com/mheadd/spec-ops/blob/main/public/TEAM.md" class="doc-card">
+                <a href="https://github.com/spec-ops-method/spec-ops/blob/main/public/TEAM.md" class="doc-card">
                     <div class="doc-card-header">
                         <span class="doc-icon">👥</span>
                         <h3>Team Structure</h3>
@@ -525,7 +568,7 @@
                     </p>
                 </a>
 
-                <a href="https://github.com/mheadd/spec-ops/blob/main/public/INSTRUCTION-SETS.md" class="doc-card">
+                <a href="https://github.com/spec-ops-method/spec-ops/blob/main/public/INSTRUCTION-SETS.md" class="doc-card">
                     <div class="doc-card-header">
                         <span class="doc-icon">💡</span>
                         <h3>Instruction Sets</h3>
@@ -559,17 +602,17 @@
                 Join the community building a better approach to legacy modernization
             </p>
             <div class="cta-buttons">
-                <a href="mailto:hello@adhoc.team" class="btn btn-primary">
-                    Contact Us
+                <a href="https://github.com/spec-ops-method/spec-ops-demo" class="btn btn-primary">
+                    Try the Demo
                 </a>
-                <a href="https://github.com/mheadd/spec-ops" class="btn btn-secondary">
-                    View on GitHub
+                <a href="https://github.com/spec-ops-method" class="btn btn-secondary">
+                    View Organization
                 </a>
-                <a href="https://github.com/mheadd/spec-ops/discussions" class="btn btn-secondary">
+                <a href="https://github.com/spec-ops-method/spec-ops/discussions" class="btn btn-secondary">
                     Join Discussions
                 </a>
-                <a href="https://github.com/mheadd/spec-ops/blob/main/public/MANIFESTO.md" class="btn btn-secondary">
-                    Read the Manifesto
+                <a href="mailto:hello@adhoc.team" class="btn btn-secondary">
+                    Contact Us
                 </a>
             </div>
         </div>
@@ -581,7 +624,7 @@
                 <strong>SpecOps:</strong> Because the knowledge is what matters. Everything else is implementation details.
             </p>
             <p style="margin-top: 1rem; opacity: 0.7;">
-                <a href="https://github.com/mheadd/spec-ops">GitHub Repository</a> • 
+                <a href="https://github.com/spec-ops-method">GitHub Organization</a> • 
                 Open Source • Community-Driven
             </p>
         </div>

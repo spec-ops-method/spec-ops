@@ -58,7 +58,7 @@
   <div class="toolbar">
     <div class="container">
       <a href="./index.html" class="btn-link">← Back to Home</a>
-      <a href="https://github.com/mheadd/spec-ops" class="btn-link">View on GitHub</a>
+      <a href="https://github.com/spec-ops-method/spec-ops" class="btn-link">View on GitHub</a>
     </div>
   </div>
 
@@ -92,14 +92,14 @@
           marked.setOptions({ gfm: true, breaks: true, headerIds: true, mangle: false });
         }
         // Prefer repository raw content to avoid keeping two copies
-        const res = await fetch('https://raw.githubusercontent.com/mheadd/spec-ops/main/FAQ.md', { cache: 'no-store' });
+        const res = await fetch('https://raw.githubusercontent.com/spec-ops-method/spec-ops/main/FAQ.md', { cache: 'no-store' });
         if (!res.ok) throw new Error('Failed to fetch FAQ.md');
         const md = await res.text();
         const html = marked.parse(md);
         const el = document.getElementById('faq');
         el.innerHTML = html;
         // Rewrite relative links that point into repo files so they resolve to GitHub
-        const base = 'https://github.com/mheadd/spec-ops/blob/main/';
+        const base = 'https://github.com/spec-ops-method/spec-ops/blob/main/';
         el.querySelectorAll('a[href]').forEach(a => {
           const href = a.getAttribute('href');
           if (!href) return;
